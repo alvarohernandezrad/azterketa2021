@@ -16,37 +16,6 @@ public class PmaDB {
 
     private DBController dbController = DBController.getInstantzia();
 
-    /*public ObservableList<Gunea> getList(){
-        ObservableList<Gunea> list = FXCollections.observableArrayList();
-        String query = "Select * from captchas;";
-        ResultSet rs = dbController.execSQL(query);
-        try{
-            String path,content;
-            Integer id;
-            Date date;
-            while(rs.next()){
-                id = rs.getInt("id");
-                path = rs.getString("filename");
-                content = rs.getString("value");
-                date = rs.getDate("date");
-                list.add(new Gunea(id,path,date,content));
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return list;
-    }
-
-    public void updateRow(Gunea model){
-        String query = "update captchas set value = '"+model.getContent()+"' where id = "+model.getId()+";";
-        dbController.execSQL(query);
-    }*/
-
-   /* public void addRow(Gunea model){
-        String query = "insert into checksum values("+model.getId()+",'"+model.getPath()+"',"+model.getMd5()+",'"+model.getVersion()+"');";
-        dbController.execSQL(query);
-    }*/
-
     public boolean dago(String md5){
         String query = "select idCMS from checksums where md5 = '"+md5+"';";
         ResultSet rs = dbController.execSQL(query);
