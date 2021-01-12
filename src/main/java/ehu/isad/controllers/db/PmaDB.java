@@ -1,8 +1,6 @@
 package ehu.isad.controllers.db;
 
 
-import ehu.isad.model.Gunea;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -44,10 +42,10 @@ public class PmaDB {
         dbController.execSQL(query);
     }*/
 
-    public void addRow(Gunea model){
+   /* public void addRow(Gunea model){
         String query = "insert into checksum values("+model.getId()+",'"+model.getPath()+"',"+model.getMd5()+",'"+model.getVersion()+"');";
         dbController.execSQL(query);
-    }
+    }*/
 
     public boolean dago(String md5){
         String query = "select idCMS from checksums where md5 = '"+md5+"';";
@@ -77,7 +75,7 @@ public class PmaDB {
     }
 
     public void bertsioBerriaSartu(String md5, String bertsioa){
-        String query = "insert into checksum (idCMS, version, md5, path) values (1,"+bertsioa+","+md5+",'README')";
+        String query = "insert into checksums (idCMS, version, md5, path) values (1,'"+bertsioa+"','"+md5+"','README')";
         DBController.getInstantzia().execSQL(query);
     }
 }

@@ -61,14 +61,12 @@ public class PmaKud {
             ObservableList<Gunea> list = table.getItems();
             Gunea g = new Gunea(1,txtfld_url.getText(),emaitza,lortuBertsioa(emaitza));
             list.add(g);
-            PmaDB.getInstantzia().addRow(g);
             table.setItems(list);
         }else{
             txt_mezua.setText("Ez da datubasean aurkitu");
             ObservableList<Gunea> list = table.getItems();
             Gunea g = new Gunea(1,txtfld_url.getText(),emaitza," ");
             list.add(g);
-            PmaDB.getInstantzia().addRow(g);
             table.setItems(list);
         }
     }
@@ -97,6 +95,6 @@ public class PmaKud {
     }
 
     private void aktualizatuDatuBasea(String md5, String bertsioa){
-        PmaDB.getInstantzia().bertsioBerriaSartu(md5, bertsioa);
+        PmaDB.getInstantzia().bertsioBerriaSartu(md5,bertsioa);
     }
 }
