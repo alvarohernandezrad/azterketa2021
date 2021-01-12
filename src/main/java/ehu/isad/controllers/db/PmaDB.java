@@ -53,12 +53,15 @@ public class PmaDB {
         int i = 0;
         try {
             i = rs.getInt("idCMS");
+            rs.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         if(i==1){
             return true;
-        }else{ return false;}
+        }else{
+            return false;
+        }
     }
 
     public String bertsioa(String md5){
